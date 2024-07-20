@@ -7,7 +7,6 @@ const Feed = () => {
         <NoteTile />
         <NoteTile />
         <NoteTile />
-        <NoteTile />
     </div>
   )
 }
