@@ -5,7 +5,7 @@ import { SlTrash } from "react-icons/sl";
 const NoteTile = () => {
     return (
         <div className='w-full py-6 group grid grid-cols-6'>
-            <div className='col col-span-6'>
+            <div className='col col-span-5'>
                 <p className='text-3xl text-[#8d8d8d] mb-3'>Always Look on the Bright Side of Life</p>
                 {/* Box 1 */}
                 <div className='flex justify-between'>
