@@ -5,9 +5,7 @@ A simple web application for creating and deleting notes. This project is built 
 ## Features
 
 - Create new notes
-- Edit existing notes
 - Delete notes
-- Save notes to local storage
 
 <!-- ## Getting Started
 
