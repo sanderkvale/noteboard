@@ -3,7 +3,7 @@ import { LiaSearchSolid } from "react-icons/lia";
 
 const SearchBar = () => {
   return (
-    <div className='w-full flex items-center gap-5'>
+    <div className='w-full flex items-center gap-5 max-w-screen-md'>
       {/* <LiaSearchSolid size={40} color='#cccccc'/> */}
       <input
         type="text"
