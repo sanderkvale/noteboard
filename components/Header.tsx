@@ -18,7 +18,7 @@ const Header = ({ addNote }: HeaderProps) => {
             <div className='col col-span-1'></div>
             <div className='col col-span-6'>
                 <div className='flex justify-between'>
-                    <h1 className="text-4xl font-semibold text-gray-700">Notes</h1>
+                    <h1 className="text-5xl font-semibold text-gray-700">Notes</h1>
                     <button onClick={openModal}>
                         <FaPlusCircle size={50} color="#61eb6e" />
                     </button>
