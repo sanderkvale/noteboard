@@ -1,4 +1,4 @@
-# Notes Project
+# Notes App
 
 A simple web application for creating, searching, and deleting notes. This project is built using NextJS and Tailwind. Notes are currently saved using localStorage, but a future version will have authentication and a backend data storage.
 
