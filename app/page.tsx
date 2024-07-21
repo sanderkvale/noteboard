@@ -30,12 +30,12 @@ export default function Home() {
       content,
     };
     setNotes(prevNotes => [...prevNotes, newNote]);
-    console.log('Added note:', newNote);
+    // console.log('Added note:', newNote);
   };
 
   const deleteNote = (id: string) => {
     setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
-    console.log('Deleted note with id:', id);
+    // console.log('Deleted note with id:', id);
   };
 
   return (

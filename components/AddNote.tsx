@@ -44,7 +44,7 @@ const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
                         className="border p-2 mb-4 w-full rounded"
                         placeholder="Enter your note here"
                     />
-                    <div className="flex justify-between w-full">
+                    <div className="flex justify-between w-full mt-3">
                         <button
                             type="button"
                             className="bg-[#61eb6e] text-white font-semibold p-2 rounded"
