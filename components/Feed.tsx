@@ -13,9 +13,10 @@ interface Note {
 interface FeedProps {
   notes: Note[];
   addNote: (content: string) => void;
+  deleteNote: (id: string) => void;
 }
 
-const Feed = ({ notes, addNote }: FeedProps) => {
+const Feed = ({ notes, addNote, deleteNote }: FeedProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -48,7 +49,7 @@ const Feed = ({ notes, addNote }: FeedProps) => {
 
       ) : (
         notes.map(note => (
-          <NoteTile key={note.id} note={note} />
+          <NoteTile key={note.id} note={note} deleteNote={deleteNote} />
         ))
       )}
     </div>

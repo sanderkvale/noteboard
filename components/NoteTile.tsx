@@ -3,7 +3,17 @@ import { HiUserAdd } from "react-icons/hi";
 import { SlTrash } from "react-icons/sl";
 import { PiPushPinThin } from "react-icons/pi";
 
-const NoteTile = ({ note }: {note: any;}) => {
+interface Note {
+    id: string;
+    content: string;
+}
+
+interface NoteTileProps {
+    note: Note;
+    deleteNote: (id: string) => void;
+}
+
+const NoteTile = ({ note, deleteNote }: NoteTileProps) => {
     return (
         <div className='w-full py-6 group grid grid-cols-8 max-w-screen-lg'>
             <div className='opacity-0 group-hover:opacity-100 transition-opacity duration-300 col col-span-1 flex items-center justify-center'>
@@ -22,10 +32,10 @@ const NoteTile = ({ note }: {note: any;}) => {
                 </div>
             </div>
             <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 col col-span-1 flex items-center justify-center">
-                <SlTrash size={40} color="red" />
+                <button onClick={() => deleteNote(note.id)}>
+                    <SlTrash size={40} color="red" />
+                </button>
             </div>
-
-
         </div>
     )
 }

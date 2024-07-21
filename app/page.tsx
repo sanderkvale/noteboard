@@ -33,11 +33,16 @@ export default function Home() {
     console.log('Added note:', newNote);
   };
 
+  const deleteNote = (id: string) => {
+    setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
+    console.log('Deleted note with id:', id);
+  };
+
   return (
     <main className="min-h-screen flex justify-center md:p-24 p-6 bg-cover bg-[url('/Background.png')]">
       <div className="flex flex-col items-center w-full">
         <Header addNote={addNote} />
-        <Feed notes={notes} addNote={addNote}/>
+        <Feed notes={notes} addNote={addNote} deleteNote={deleteNote}/>
       </div>
     </main>
   );
