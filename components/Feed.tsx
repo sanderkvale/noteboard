@@ -18,42 +18,50 @@ interface FeedProps {
 
 const Feed = ({ notes, addNote, deleteNote }: FeedProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  return (
-    <div className='w-full gap-10 flex flex-col items-center'>
-      <SearchBar />
-      {notes.length === 0 ? (
-        <div className='w-full group grid grid-cols-8 max-w-screen-lg'>
-        <div className='col col-span-1'>
-        </div>
-        <div className='col col-span-6 w-full'>
-        <div className='flex flex-col w-full'>
-          <p className='text-2xl text-[#8d8d8d] mb-3'>Add your first note.</p>
-          <button onClick={openModal}>
-            <FaPlusCircle size={50} color="#61eb6e" />
-          </button>
-          {isModalOpen && (
-                <AddNote 
-                    closeModal={closeModal} 
-                    addNote={addNote}
-                />
-            )}
-        </div>
-        </div>
-        <div className='col col-span-1'></div>
-      </div>
-        
+  const filteredNotes = notes.filter(note =>
+    note.content.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
+  return (
+    <div className="w-full gap-10 flex flex-col items-center">
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {filteredNotes.length === 0 ? (
+        <div className="w-full group grid grid-cols-8 max-w-screen-lg">
+          <div className="col col-span-1"></div>
+          <div className="col col-span-6 w-full">
+            <div className="flex flex-col w-full">
+              {notes.length === 0 ? (
+                <>
+                  <p className="text-2xl text-[#8d8d8d] mb-3">Add your first note.</p>
+                  <button onClick={openModal}>
+                    <FaPlusCircle size={50} color="#61eb6e" />
+                  </button>
+                </>
+              ) : (
+                <p className="text-2xl text-[#8d8d8d] mb-3">No results found.</p>
+              )}
+              {isModalOpen && (
+                <AddNote
+                  closeModal={closeModal}
+                  addNote={addNote}
+                />
+              )}
+            </div>
+          </div>
+          <div className="col col-span-1"></div>
+        </div>
       ) : (
-        notes.map(note => (
+        filteredNotes.map(note => (
           <NoteTile key={note.id} note={note} deleteNote={deleteNote} />
         ))
       )}
     </div>
-  )
+  );
 }
 
 export default Feed;
