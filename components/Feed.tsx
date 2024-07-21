@@ -9,9 +9,10 @@ interface FeedProps {
   notes: Note[];
   addNote: (content: string) => void;
   deleteNote: (id: string) => void;
+  togglePinNote: (id: string) => void;
 }
 
-const Feed = ({ notes, addNote, deleteNote }: FeedProps) => {
+const Feed = ({ notes, addNote, deleteNote, togglePinNote }: FeedProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -52,7 +53,7 @@ const Feed = ({ notes, addNote, deleteNote }: FeedProps) => {
         </div>
       ) : (
         filteredNotes.map(note => (
-          <NoteTile key={note.id} note={note} deleteNote={deleteNote} />
+          <NoteTile key={note.id} note={note} deleteNote={deleteNote} togglePinNote={togglePinNote} />
         ))
       )}
     </div>
