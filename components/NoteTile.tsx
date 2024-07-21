@@ -11,7 +11,7 @@ interface NoteTileProps {
 
 const NoteTile = ({ note, deleteNote, togglePinNote }: NoteTileProps) => {
     return (
-        <div className='w-full py-6 group grid grid-cols-8 max-w-screen-lg'>
+        <div className='w-full py-3 group grid grid-cols-8 max-w-screen-lg'>
             <div className=' col col-span-1 flex items-center justify-center'>
                 {note.pinned ? (
                     <div>
