@@ -37,7 +37,7 @@ const NoteTile = ({ note, deleteNote, togglePinNote }: NoteTileProps) => {
                     </div>
                     <div>
                         {/* TODO: Make this field dynamic */}
-                        <p className='text-[#cccccc]'>2 mins ago</p>
+                        <p className='text-[#cccccc] italic text-sm'>2 mins ago</p>
                     </div>
                 </div>
             </div>
