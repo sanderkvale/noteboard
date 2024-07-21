@@ -14,12 +14,19 @@ const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
     };
 
     const handleSubmit = () => {
-        if (note.trim()) { // Remove whitespace from the note.
-            addNote(note); // Use the addNote function to add the note
-            setNote(''); // Clear input after submission
+        if (note.trim()) {
+            addNote(note);
+            setNote('');
             closeModal();
         } else {
-            alert("Please add some content to the note!");
+            alert("Note content cannot be empty.");
+        }
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission if inside a form
+            handleSubmit();
         }
     };
 
@@ -33,6 +40,7 @@ const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
                         type="text"
                         value={note}
                         onChange={handleNoteChange}
+                        onKeyDown={handleKeyDown} 
                         className="border p-2 mb-4 w-full rounded"
                         placeholder="Enter your note here"
                     />
@@ -42,7 +50,7 @@ const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
                             className="bg-[#61eb6e] text-white font-semibold p-2 rounded"
                             onClick={handleSubmit}
                         >
-                            Submit Note
+                            Add Note
                         </button>
                         <button
                             type="button"
