@@ -1,12 +1,13 @@
 # Notes Project
 
-A simple web application for creating and deleting notes. This project is built using NextJS and Tailwind.
+A simple web application for creating, searching, and deleting notes. This project is built using NextJS and Tailwind.
 
 ## Features
 
 - Create new notes
 - Delete notes
 - Search notes
+- Pin important notes
 
 ## Live demo
 
