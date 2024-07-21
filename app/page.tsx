@@ -1,3 +1,4 @@
+import AddNote from "@/components/AddNote";
 import Feed from "@/components/Feed";
 import Header from "@/components/Header";
 import SearchBar from "@/components/SearchBar";
