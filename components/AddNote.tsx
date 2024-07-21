@@ -1,11 +1,11 @@
 "use client"
-import React, { SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 
 interface AddNoteProps {
     closeModal: () => void;
 }
 
-const AddNote: React.FC<AddNoteProps> = ({ closeModal }) => {
+const AddNote = ({ closeModal }: AddNoteProps) => {
     const [note, setNote] = useState<string>('');
 
     const handleNoteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +38,13 @@ const AddNote: React.FC<AddNoteProps> = ({ closeModal }) => {
                         >
                             Submit Note
                         </button>
-                        <button type="button" className="bg-red-500 text-white p-2 rounded font-semibold" onClick={closeModal}>Close</button>
+                        <button
+                            type="button"
+                            className="bg-red-500 text-white p-2 rounded font-semibold"
+                            onClick={closeModal}
+                        >
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
