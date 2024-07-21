@@ -25,7 +25,7 @@ const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent form submission if inside a form
+            event.preventDefault();
             handleSubmit();
         }
     };
