@@ -23,10 +23,14 @@ const Feed = ({ notes, addNote, deleteNote, togglePinNote }: FeedProps) => {
     note.content.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const pinnedNotes = filteredNotes.filter(note => note.pinned);
+  const unpinnedNotes = filteredNotes.filter(note => !note.pinned);
+  const sortedNotes = [...pinnedNotes, ...unpinnedNotes];
+
   return (
     <div className="w-full gap-10 flex flex-col items-center">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      {filteredNotes.length === 0 ? (
+      {sortedNotes.length === 0 ? (
         <div className="w-full group grid grid-cols-8 max-w-screen-lg">
           <div className="col col-span-1"></div>
           <div className="col col-span-6 w-full">
@@ -52,7 +56,7 @@ const Feed = ({ notes, addNote, deleteNote, togglePinNote }: FeedProps) => {
           <div className="col col-span-1"></div>
         </div>
       ) : (
-        filteredNotes.map(note => (
+        sortedNotes.map(note => (
           <NoteTile key={note.id} note={note} deleteNote={deleteNote} togglePinNote={togglePinNote} />
         ))
       )}
