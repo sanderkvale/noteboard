@@ -5,11 +5,6 @@ import SearchBar from './SearchBar';
 import { FaPlusCircle } from 'react-icons/fa';
 import AddNote from './AddNote';
 
-interface Note {
-  id: string;
-  content: string;
-}
-
 interface FeedProps {
   notes: Note[];
   addNote: (content: string) => void;

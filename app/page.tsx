@@ -4,11 +4,6 @@ import Header from '@/components/Header';
 import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-interface Note {
-  id: string;
-  content: string;
-}
-
 export default function Home() {
   const [notes, setNotes] = useState<Note[]>([]);
 
