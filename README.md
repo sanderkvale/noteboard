@@ -10,7 +10,7 @@ A simple web application for creating and deleting notes. This project is built 
 
 ## Live demo
 
-A live demo can be found [here](https://notes-8fold.vercel.app)
+A live demo can be found [here](https://notes-8fold.vercel.app){:target="_blank"}
 
 ## Getting Started
 
