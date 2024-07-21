@@ -32,9 +32,11 @@ const NoteTile = ({ note, deleteNote, togglePinNote }: NoteTileProps) => {
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-3'>
                         <HiUserAdd size={30} color='#cccccc' />
+                        {/* TODO: Add username after authentication is implemented */}
                         <p className='text-[#cccccc]'>John Doe</p>
                     </div>
                     <div>
+                        {/* TODO: Make this field dynamic */}
                         <p className='text-[#cccccc]'>2 mins ago</p>
                     </div>
                 </div>
