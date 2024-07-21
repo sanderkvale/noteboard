@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex justify-center md:p-24 p-6 bg-cover bg-[url('/Background.png')]">
+    <main className="min-h-screen flex justify-center md:p-24 p-6 bg-cover bg-[url('/images/Background.png')]">
       <div className="flex flex-col items-center w-full">
         <Header addNote={addNote} />
         <Feed notes={notes} addNote={addNote} deleteNote={deleteNote}/>
