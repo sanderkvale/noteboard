@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 
 interface AddNoteProps {
     closeModal: () => void;
+    addNote: (content: string) => void;
 }
 
-const AddNote = ({ closeModal }: AddNoteProps) => {
+const AddNote = ({ closeModal, addNote }: AddNoteProps) => {
     const [note, setNote] = useState<string>('');
 
     const handleNoteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,8 +14,13 @@ const AddNote = ({ closeModal }: AddNoteProps) => {
     };
 
     const handleSubmit = () => {
-        console.log('Note submitted:', note);
-        closeModal();
+        if (note.trim()) { // Remove whitespace from the note.
+            addNote(note); // Use the addNote function to add the note
+            setNote(''); // Clear input after submission
+            closeModal();
+        } else {
+            alert("Please add some content to the note!");
+        }
     };
 
     return (

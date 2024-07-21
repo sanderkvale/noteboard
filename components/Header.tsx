@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 import { FaPlusCircle } from "react-icons/fa";
 import AddNote from './AddNote';
 
-const Header = () => {
+interface HeaderProps {
+    addNote: (content: string) => void;
+}
+
+const Header = ({ addNote }: HeaderProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
@@ -21,9 +25,14 @@ const Header = () => {
                 </div>
             </div>
             <div className='col col-span-1'></div>
-            {isModalOpen && <AddNote closeModal={closeModal} />}
+            {isModalOpen && (
+                <AddNote 
+                    closeModal={closeModal} 
+                    addNote={addNote}
+                />
+            )}
         </div>
     )
 }
 
-export default Header
+export default Header;
