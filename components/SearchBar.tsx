@@ -11,7 +11,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search through your Notes"
-          className='flex-1 py-2 text-2xl border-b border-gray-300 bg-transparent focus:outline-none w-full italic'
+          className='flex-1 py-2 text-2xl border-b border-gray-300 bg-transparent focus:outline-none w-full placeholder:italic'
         />
       </div>
       <div className='col col-span-1'></div>
