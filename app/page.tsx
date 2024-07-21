@@ -41,7 +41,6 @@ export default function Home() {
         note.id === id ? { ...note, pinned: !note.pinned } : note
       )
     );
-    console.log("note pinnes");
   };
 
   return (
