@@ -24,18 +24,18 @@ export default function Home() {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
+  // Function for adding notes
   const addNote = (content: string) => {
     const newNote = {
       id: uuidv4(),
       content,
     };
     setNotes(prevNotes => [...prevNotes, newNote]);
-    // console.log('Added note:', newNote);
   };
 
+  // Function for deleting notes
   const deleteNote = (id: string) => {
     setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
-    // console.log('Deleted note with id:', id);
   };
 
   return (
