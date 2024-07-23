@@ -5,7 +5,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "8 Fold - Notes"
+  title: "Noteboard",
+  description: 'A simple web application for creating, searching, and deleting notes.',
+  authors: [{ name: 'Sander', url: 'https://sanderkg.com' }],
+  creator: 'Sander Kvale Garborg',
+  publisher: 'Sander Kvale Garborg',
+  applicationName: 'Noteboard',
 };
 
 export default function RootLayout({
